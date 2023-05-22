@@ -1,0 +1,17 @@
+<div id="checkout-shipping-method-load">
+    <select name="myshipping-list" id="myshipping-list" data-bind="options: rates() ,  optionsCaption: 'Please select a rate...',
+                            optionsText: function(item) {
+                                return element.getFormattedPrice(item.price_incl_tax)+ '&nbsp;&nbsp;&nbsp;' + item.method_title  + '&nbsp;&nbsp;&nbsp;'  + item.carrier_title
+                                },
+                            optionsValue:function(item) {
+
+                               return item.carrier_code + '_' + item.method_code;
+                            },
+                            ko-value: function(item) {
+
+                               return item.carrier_code + '_' + item.method_code;
+                            },
+                            value:isSelected,
+                            event:{ change:shippingSelectionChanged }">
+    </select>
+</div>

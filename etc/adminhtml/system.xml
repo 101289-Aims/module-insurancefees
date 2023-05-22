@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Aimsinfosoft
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the aimsinfosoft.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.aimsinfosoft.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Aimsinfosoft
+ * @package     Aimsinfosoft_InsuranceFees
+ * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com)
+ * @license     https://www.aimsinfosoft.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="aimsconfigtab" translate="label" sortOrder="10">
+
+            <label>Aimsinfosoft</label>
+
+        </tab>
+        <section id="customfee" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+
+             <label>Insurance Fees</label>
+
+            <tab>aimsconfigtab</tab>
+            <resource>Aimsinfosoft_InsuranceFees::aimsinfosoft_config</resource>
+            <group id="customfee" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Insurance Fee Configuration</label>
+                <field id="status" translate="label comment" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="name" translate="label comment" type="text" sortOrder="2" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Insurance Fees Label</label>
+                    <depends>
+                        <field id="customfee/customfee/status">1</field>
+                    </depends>         
+                </field>
+                <field id="customfee_amount" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Insunrance Fees Precentage</label>
+                    <validate>validate-number validate-zero-or-greater required</validate>
+					<comment><![CDATA[Applies as precentage ]]></comment>
+					<depends>
+                        <field id="customfee/customfee/status">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

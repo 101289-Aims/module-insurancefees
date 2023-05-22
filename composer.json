@@ -1,0 +1,30 @@
+{
+  "name": "aimsinfosoft/insurancefees",
+  "description": "A Magento 2 module that allows to Use predefined variables for label texts and easily upload your own label images of any shapes.",
+  "version": "1.0.0",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "Aimsinfosoft",
+      "email": "info@aimsinfosoft.com",
+      "homepage": "https://aimsinfosoft.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": "~8.1.0||~8.2.0",
+    "Aimsinfosoft/Base": "~1.0.0"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Aimsinfosoft\\InsuranceFees\\": ""
+    }
+  }
+}
